@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "ng serve --no-open",
+    "start:open": "ng serve --open",
+    "build": "ng build",
+    "prod": "ng serve --configuration production"
+  }
+}

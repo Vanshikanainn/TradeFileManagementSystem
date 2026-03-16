@@ -1,0 +1,126 @@
+// /* -------------------- Navbar -------------------- */
+// .navbar {
+//   position: top;
+//   top: 0;
+// //   z-index: 10;
+//   display: flex;
+//   align-items: center;
+//   padding: 10px 20px;
+//   background: linear-gradient(135deg, #0097a7, #6a1b9a); /* same as hero */
+//   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+// //   border-radius: 0 0 12px 12px;
+// }
+//
+// .brand {
+//   display: inline-flex;
+//   align-items: center;
+//   text-decoration: none;
+//   color: #ffffff;
+//   font-family: 'Montserrat', sans-serif;
+//   font-weight: 700;
+//   font-size: 1.5rem;
+//   letter-spacing: 1px;
+// }
+//
+// .logo {
+//   height: 32px; /* slightly larger for visibility */
+//   width: auto;
+//   display: block;
+//   margin-right: 10px;
+// }
+//
+// .spacer {
+//   flex: 1 1 auto;
+// }
+//
+// button {
+//   margin-left: 10px;
+//   padding: 8px 18px;
+//   font-weight: 600;
+//   font-family: 'Montserrat', sans-serif;
+//   font-size: 0.95rem;
+//   color: #ffffff;
+//   background: rgba(255,255,255,0.1); /* semi-transparent for subtlety */
+//   border: 1px solid rgba(255,255,255,0.3);
+//   border-radius: 8px;
+//   cursor: pointer;
+//   transition: all 0.3s;
+// }
+//
+// button:hover {
+//   background: linear-gradient(135deg, #00bcd4, #8e24aa); /* theme hover */
+//   color: #ffffff;
+//   box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+//   border-color: #ffffff;
+// }
+
+/* Reset default body margin so there's no gap at the top */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------- Navbar -------------------- */
+.navbar {
+  position: fixed;        /* sticks to the viewport */
+  top: 0;
+  left: 0;
+  right: 0;               /* or width: 100%; */
+  z-index: 1000;          /* stays above content */
+
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #0097a7, #6a1b9a);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  /* border-radius: 0 0 12px 12px;  if you want rounded bottom edges */
+}
+
+/* Optional: prevent content from hiding under fixed navbar.
+   Adjust this to match your navbar height (here ~52px). */
+.main-content {
+  padding-top: 60px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.logo {
+  height: 32px;
+  width: auto;
+  display: block;
+  margin-right: 10px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+button {
+  margin-left: 10px;
+  padding: 8px 18px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #00bcd4, #8e24aa);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  border-color: #ffffff;
+}

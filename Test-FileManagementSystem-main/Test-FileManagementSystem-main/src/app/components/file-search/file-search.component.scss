@@ -1,0 +1,148 @@
+/* -------------------- Search Container -------------------- */
+.search-bar-wrap {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+  padding: 14px 18px;
+}
+
+/* ---- Single compact row ---- */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ---- Field widths ---- */
+.f-id     { flex: 1 1 110px; min-width: 0; }
+.f-search { flex: 2 1 220px; min-width: 0; }
+.f-status { flex: 1 1 140px; min-width: 0; }
+.f-mime   { flex: 1 1 90px;  min-width: 0; }
+.f-date   { flex: 1 1 150px; min-width: 0; }
+.f-record { flex: 1 1 120px; min-width: 0; }
+
+/* ---- Global field size reduction ---- */
+.search-bar mat-form-field {
+  font-size: 0.93rem;
+  --mat-form-field-subscript-text-size: 0px;
+}
+
+/* Remove the big bottom hint/error margin entirely */
+::ng-deep .search-bar-wrap .mat-mdc-form-field-subscript-wrapper {
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Shrink the inner text-field wrapper height */
+::ng-deep .search-bar-wrap .mat-mdc-text-field-wrapper {
+  background: #f8fafc !important;
+  border-radius: 8px !important;
+  padding: 0 10px !important;
+}
+
+/* Reduce top/bottom padding inside the input row */
+::ng-deep .search-bar-wrap .mat-mdc-form-field-infix {
+  padding-top: 13px !important;
+  padding-bottom: 13px !important;
+  min-height: 0 !important;
+}
+
+/* Tighten the floating label position */
+::ng-deep .search-bar-wrap .mdc-floating-label {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  font-size: 0.93rem !important;
+}
+
+::ng-deep .search-bar-wrap .mdc-floating-label--float-above {
+  top: 0 !important;
+  transform: translateY(-45%) scale(0.75) !important;
+}
+
+/* Outline border colour */
+::ng-deep .search-bar-wrap .mdc-text-field--outlined .mdc-notched-outline__leading,
+::ng-deep .search-bar-wrap .mdc-text-field--outlined .mdc-notched-outline__notch,
+::ng-deep .search-bar-wrap .mdc-text-field--outlined .mdc-notched-outline__trailing {
+  border-color: rgba(0, 151, 167, 0.28) !important;
+}
+
+::ng-deep .search-bar-wrap .mdc-text-field--focused .mdc-notched-outline__leading,
+::ng-deep .search-bar-wrap .mdc-text-field--focused .mdc-notched-outline__notch,
+::ng-deep .search-bar-wrap .mdc-text-field--focused .mdc-notched-outline__trailing {
+  border-color: #0097a7 !important;
+  border-width: 1.5px !important;
+}
+
+/* Input text size */
+::ng-deep .search-bar-wrap input.mat-mdc-input-element,
+::ng-deep .search-bar-wrap .mat-mdc-select-value-text {
+  font-size: 0.93rem !important;
+  line-height: 1.4 !important;
+}
+
+/* Shrink the datepicker calendar icon */
+::ng-deep .search-bar-wrap .mat-mdc-icon-button.mat-mdc-button-base {
+  width: 36px !important;
+  height: 36px !important;
+  padding: 6px !important;
+  font-size: 20px !important;
+}
+
+::ng-deep .search-bar-wrap .mat-mdc-icon-button svg,
+::ng-deep .search-bar-wrap .mat-mdc-icon-button .mat-icon {
+  width: 20px !important;
+  height: 20px !important;
+  font-size: 20px !important;
+}
+
+/* Shrink select arrow */
+::ng-deep .search-bar-wrap .mat-mdc-select-arrow-wrapper {
+  transform: translateY(0) !important;
+  height: 14px !important;
+}
+
+/* ---- Buttons ---- */
+.btn-filter,
+.btn-reset {
+  height: 46px !important;
+  line-height: 46px !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: center;
+  transition: transform 0.18s ease, box-shadow 0.18s ease !important;
+}
+
+.btn-filter {
+  background: linear-gradient(135deg, #0097a7, #6a1b9a) !important;
+  color: #ffffff !important;
+  padding: 0 16px !important;
+  box-shadow: 0 3px 12px rgba(0,151,167,0.22) !important;
+}
+
+.btn-filter:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(0,151,167,0.32) !important;
+}
+
+.btn-reset {
+  color: #64748b !important;
+  border-color: rgba(100,116,139,0.35) !important;
+  padding: 0 12px !important;
+  background: transparent !important;
+}
+
+.btn-reset:hover { background: rgba(100,116,139,0.06) !important; }
+
+/* ---- Responsive ---- */
+@media (max-width: 700px) {
+  .search-bar { flex-wrap: wrap; }
+  .f-id, .f-search, .f-status, .f-date, .f-record { flex: 1 1 calc(50% - 4px); }
+  .btn-filter, .btn-reset { flex: 1 1 calc(50% - 4px); justify-content: center; }
+}

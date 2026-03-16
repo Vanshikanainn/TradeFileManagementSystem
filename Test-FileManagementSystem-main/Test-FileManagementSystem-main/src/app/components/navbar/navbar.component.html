@@ -1,0 +1,23 @@
+<mat-toolbar color="primary" class="navbar">
+    <a routerLink="/" class="brand" aria-label="Dashboard">
+        <img src="assets/mphasis-logo.png" class="logo" alt="FileLoad logo">
+    </a>
+
+    <!-- Dashboard button only visible after login -->
+    <button mat-button *ngIf="isLoggedIn" routerLink="/">Dashboard</button>
+
+    <span class="spacer"></span>
+
+    <!-- Login/Register visible only when NOT logged in -->
+    <ng-container *ngIf="!isLoggedIn">
+        <button mat-button routerLink="/login">Login</button>
+        <button mat-button routerLink="/register">Register</button>
+    </ng-container>
+
+    <!-- Logged in actions -->
+    <ng-container *ngIf="isLoggedIn">
+        <button mat-button routerLink="/files">Files</button>
+        <button mat-button routerLink="/upload">Upload</button>
+        <button mat-button color="warn" (click)="logout()">Logout</button>
+    </ng-container>
+</mat-toolbar>

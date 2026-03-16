@@ -1,0 +1,21 @@
+<mat-card class="auth-card">
+    <h2>Login</h2>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <mat-form-field appearance="outline" class="full">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="you@example.com" formControlName="email" />
+            <mat-error *ngIf="form.controls.email.invalid">Valid email required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" />
+            <mat-error *ngIf="form.controls.password.invalid">Min length 6</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="loading || form.invalid">
+            {{ loading ? 'Signing in…' : 'Sign in' }}
+        </button>
+        <a routerLink="/register" class="ml">Create an account</a>
+    </form>
+</mat-card>
